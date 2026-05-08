@@ -1,0 +1,85 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Fetch Moedict Annotations</title>
+<pre id="status">Loading terms...</pre>
+<pre id="output"></pre>
+<script>
+  const status = document.querySelector("#status");
+  const output = document.querySelector("#output");
+  const concurrency = 12;
+
+  function hanLength(term) {
+    return [...term].filter(character => /\p{Script=Han}/u.test(character)).length;
+  }
+
+  function splitReading(value) {
+    return String(value || "").trim().split(/\s+/).filter(Boolean);
+  }
+
+  function normalizeEntry(term, data) {
+    const heteronyms = Array.isArray(data?.h) ? data.h : [];
+    const readings = heteronyms
+      .map(item => ({
+        zhuyin: splitReading(item.b),
+        pinyin: splitReading(item.p)
+      }))
+      .filter(item => item.zhuyin.length && item.pinyin.length);
+
+    if (!readings.length) return null;
+    const expected = hanLength(term);
+    const usable = readings.filter(item => item.zhuyin.length === expected && item.pinyin.length === expected);
+    if (!usable.length) return null;
+
+    const unique = [];
+    const seen = new Set();
+    usable.forEach(item => {
+      const key = `${item.zhuyin.join(" ")}|${item.pinyin.join(" ")}`;
+      if (seen.has(key)) return;
+      seen.add(key);
+      unique.push(item);
+    });
+
+    return { term, readings: unique };
+  }
+
+  async function fetchTerm(term) {
+    const response = await fetch(`https://www.moedict.tw/a/${encodeURIComponent(term)}.json`);
+    if (!response.ok) return null;
+    return normalizeEntry(term, await response.json());
+  }
+
+  async function run() {
+    const terms = await fetch("../reading-data/moedict-fetch-terms.json").then(response => response.json());
+    const results = [];
+    let index = 0;
+    let completed = 0;
+
+    async function worker() {
+      while (index < terms.length) {
+        const term = terms[index++];
+        try {
+          const entry = await fetchTerm(term);
+          if (entry) results.push(entry);
+        } catch (error) {
+          // Missing or malformed entries are safe to ignore; unknown text remains unannotated.
+        }
+        completed += 1;
+        if (completed % 50 === 0 || completed === terms.length) {
+          status.textContent = `Fetching Moedict annotations... ${completed}/${terms.length}`;
+        }
+      }
+    }
+
+    await Promise.all(Array.from({ length: concurrency }, worker));
+    results.sort((a, b) => b.term.length - a.term.length || a.term.localeCompare(b.term, "zh-Hant"));
+    status.textContent = `DONE ${results.length}/${terms.length}`;
+    output.textContent = JSON.stringify({
+      source: "https://github.com/g0v/moedict.tw",
+      api: "https://www.moedict.tw/a/",
+      generatedAt: new Date().toISOString(),
+      entries: results
+    });
+  }
+
+  run();
+</script>
