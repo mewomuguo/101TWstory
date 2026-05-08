@@ -1,0 +1,99 @@
+{
+  "overrides": [
+    {
+      "term": "根據地",
+      "zhuyin": ["ㄍㄣ", "ㄐㄩˋ", "ㄉㄧˋ"],
+      "pinyin": ["gēn", "jù", "dì"]
+    },
+    {
+      "term": "各地",
+      "zhuyin": ["ㄍㄜˋ", "ㄉㄧˋ"],
+      "pinyin": ["gè", "dì"]
+    },
+    {
+      "term": "重逾",
+      "zhuyin": ["ㄓㄨㄥˋ", "ㄩˊ"],
+      "pinyin": ["zhòng", "yú"]
+    },
+    {
+      "term": "最盛",
+      "zhuyin": ["ㄗㄨㄟˋ", "ㄕㄥˋ"],
+      "pinyin": ["zuì", "shèng"]
+    },
+    {
+      "term": "變少",
+      "zhuyin": ["ㄅㄧㄢˋ", "ㄕㄠˇ"],
+      "pinyin": ["biàn", "shǎo"]
+    },
+    {
+      "term": "便能",
+      "zhuyin": ["ㄅㄧㄢˋ", "ㄋㄥˊ"],
+      "pinyin": ["biàn", "néng"]
+    },
+    {
+      "term": "還比",
+      "zhuyin": ["ㄏㄞˊ", "ㄅㄧˇ"],
+      "pinyin": ["hái", "bǐ"]
+    },
+    {
+      "term": "更是",
+      "zhuyin": ["ㄍㄥˋ", "ㄕˋ"],
+      "pinyin": ["gèng", "shì"]
+    },
+    {
+      "term": "更有效",
+      "zhuyin": ["ㄍㄥˋ", "ㄧㄡˇ", "ㄒㄧㄠˋ"],
+      "pinyin": ["gèng", "yǒu", "xiào"]
+    },
+    {
+      "term": "效率",
+      "zhuyin": ["ㄒㄧㄠˋ", "ㄌㄩˋ"],
+      "pinyin": ["xiào", "lǜ"]
+    },
+    {
+      "term": "而會",
+      "zhuyin": ["ㄦˊ", "ㄏㄨㄟˋ"],
+      "pinyin": ["ér", "huì"]
+    },
+    {
+      "term": "並將",
+      "zhuyin": ["ㄅㄧㄥˋ", "ㄐㄧㄤ"],
+      "pinyin": ["bìng", "jiāng"]
+    },
+    {
+      "term": "故將",
+      "zhuyin": ["ㄍㄨˋ", "ㄐㄧㄤ"],
+      "pinyin": ["gù", "jiāng"]
+    },
+    {
+      "term": "只限",
+      "zhuyin": ["ㄓˇ", "ㄒㄧㄢˋ"],
+      "pinyin": ["zhǐ", "xiàn"]
+    },
+    {
+      "term": "之間",
+      "zhuyin": ["ㄓ", "ㄐㄧㄢ"],
+      "pinyin": ["zhī", "jiān"]
+    },
+    {
+      "term": "遠空",
+      "zhuyin": ["ㄩㄢˇ", "ㄎㄨㄥ"],
+      "pinyin": ["yuǎn", "kōng"]
+    },
+    {
+      "term": "曾是",
+      "zhuyin": ["ㄘㄥˊ", "ㄕˋ"],
+      "pinyin": ["céng", "shì"]
+    },
+    {
+      "term": "都以",
+      "zhuyin": ["ㄉㄡ", "ㄧˇ"],
+      "pinyin": ["dōu", "yǐ"]
+    },
+    {
+      "term": "都因",
+      "zhuyin": ["ㄉㄡ", "ㄧㄣ"],
+      "pinyin": ["dōu", "yīn"]
+    }
+  ]
+}

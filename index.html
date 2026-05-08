@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>101 台灣小故事 | 101 Taiwan Stories</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <nav class="nav-bar" aria-label="Primary">
+        <a class="brand" href="#top" data-i18n="brand">101 台灣小故事</a>
+        <div class="nav-actions" aria-label="Language selector">
+          <button class="lang-button is-active" type="button" data-lang="zh">漢語</button>
+          <button class="lang-button" type="button" data-lang="en">English</button>
+          <button class="lang-button" type="button" data-lang="annotated">漢注音/漢拼音</button>
+        </div>
+      </nav>
+
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="eyebrow">島嶼、人物、記憶與文化</p>
+          <h1 id="hero-title" data-i18n="heroTitle">用 101 則故事閱讀臺灣</h1>
+          <p class="hero-text" data-i18n="heroText">
+            從自然地景、族群歷史、本土藝文到打拼精神，探索這座島嶼如何被一代又一代的人說成故事。
+          </p>
+        </div>
+        <form class="search-panel" role="search">
+          <label class="search-label" for="story-search" data-i18n="searchLabel">搜尋故事</label>
+          <div class="search-row">
+            <input id="story-search" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder" />
+            <button type="button" id="clear-search" aria-label="Clear search">×</button>
+          </div>
+        </form>
+      </section>
+    </header>
+
+    <main>
+      <section class="stats-band" aria-label="Collection summary">
+        <div class="stat">
+          <strong id="total-count">101</strong>
+          <span data-i18n="stories">則故事</span>
+        </div>
+        <div class="stat">
+          <strong>4</strong>
+          <span data-i18n="themes">個主題</span>
+        </div>
+        <div class="stat">
+          <strong>209</strong>
+          <span data-i18n="images">張圖像</span>
+        </div>
+      </section>
+
+      <section class="catalog" aria-labelledby="catalog-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" data-i18n="catalogEyebrow">故事架構</p>
+            <h2 id="catalog-title" data-i18n="catalogTitle">依主題進入故事</h2>
+          </div>
+          <p id="result-count" class="result-count" aria-live="polite"></p>
+        </div>
+
+        <div class="filters" id="filters" aria-label="Story categories"></div>
+        <div class="story-grid" id="story-grid"></div>
+      </section>
+    </main>
+
+    <template id="story-card-template">
+      <article class="story-card">
+        <a class="story-link">
+          <div class="story-content">
+            <p class="story-category"></p>
+            <h3 class="story-title"></h3>
+            <p class="story-author"></p>
+          </div>
+        </a>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
