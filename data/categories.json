@@ -1,0 +1,22 @@
+[
+  {
+    "id": "island",
+    "name": "島國意象",
+    "description": "認識臺灣自然、地理與島嶼特色。"
+  },
+  {
+    "id": "history",
+    "name": "族群歷史",
+    "description": "認識臺灣不同族群與歷史記憶。"
+  },
+  {
+    "id": "arts",
+    "name": "本土藝文",
+    "description": "認識臺灣文化、藝術與文學。"
+  },
+  {
+    "id": "spirit",
+    "name": "打拼精神",
+    "description": "認識臺灣人物的努力與行動。"
+  }
+]

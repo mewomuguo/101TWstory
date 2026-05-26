@@ -1,0 +1,8 @@
+{
+  "source": "g0v/moedict-data dict-revised.json",
+  "phraseCount": 149868,
+  "charCount": 9929,
+  "polyphonicCharCount": 1703,
+  "customReadingsPreserved": true,
+  "status": "PASS"
+}
